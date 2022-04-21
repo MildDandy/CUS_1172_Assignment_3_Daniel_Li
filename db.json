@@ -1,0 +1,227 @@
+{
+   "quiz_1": [
+      {
+         "question_type":"mc",
+         "question_text":"What HTML tag is used to embed an image in an HTML page?",
+         "question_options":[
+            "table",
+            "img",
+            "head",
+            "body"
+         ],
+         "correct_answer":"img",
+         "answer_explanation":"<img> is the correct tag used for dealing with image embeds."
+      },
+      {
+         "question_type":"text",
+         "question_text":"In Java, the index of an array starts at ___.",
+         "answer_field":"text_answer",
+         "correct_answer":"0",
+         "answer_explanation":"The index of an array always starts at 0 when working with Java, due to how the compiler works."
+      },
+      {
+         "question_type":"tf",
+         "question_text":"The <img> tag does not require a closing tag.",
+         "question_options":[
+            "True",
+            "False"
+         ],
+         "correct_answer":"True",
+         "answer_explanation":"img is a special tag, so you can just use a / on the opening tag if there is no closing tag. Ex. <img src=... />"
+      },
+      {
+         "question_type":"tf",
+         "question_text":"Java is a statically typed language.",
+         "question_options":[
+            "True",
+            "False"
+         ],
+         "correct_answer":"True",
+         "answer_explanation":"Java is a statically typed language, meaning you MUST declare the variable type before assigning a value e.g. \"int x = 5\""
+      },
+      {
+         "question_type":"mc",
+         "question_text":"Which HTML tag defines a table row?",
+         "question_options":[
+            "th",
+            "table",
+            "tr",
+            "td"
+         ],
+         "correct_answer":"tr",
+         "answer_explanation":"<tr> is used to specify how many rows a table has."
+      },
+      {
+         "question_type":"mc",
+         "question_text":"Handlebars is an example of an _____ engine.",
+         "question_options":[
+            "motor",
+            "templating",
+            "identity",
+            "isotope"
+         ],
+         "correct_answer":"templating",
+         "answer_explanation":"Templating engines utilize a different syntax that replaces placeholders to assist on the front-end and back-end."
+      },
+      {
+         "question_type":"tf",
+         "question_text":"HTML tags are case-sensitive",
+         "question_options":[
+            "True",
+            "False"
+         ],
+         "correct_answer":"False",
+         "answer_explanation":"It is not required, but it is recommended to make your HTML tags lowercase, and is even demanded from stricter document types like XHTML. Ex. <P> means the same as <p>"
+      },
+      {
+         "question_type":"tf",
+         "question_text":"\\:https://www.google.com/\\: is an absolute URL.",
+         "question_options":[
+            "True",
+            "False"
+         ],
+         "correct_answer":"True",
+         "answer_explanation":"Absolute URLs link to something that is hosted on another website."
+      },
+      {
+         "question_type":"mc",
+         "question_text":"What language is Bootstrap for?",
+         "question_options":[
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "JSON"
+         ],
+         "correct_answer":"CSS",
+         "answer_explanation":"Bootstrap is used to help streamline CSS."
+      },
+      {
+         "question_type":"mc",
+         "question_text":"What is the head tag used for?",
+         "question_options":[
+            "Important info that should be displayed at the top of the web browser",
+            "Information that isn't rendered on the web browser",
+            "Content that is to be rendered or displayed on the browser window",
+            "Info that should be displayed at the bottom of the web browser"
+         ],
+         "correct_answer":"Information that isn't rendered on the web browser",
+         "answer_explanation":"The head tag provides info to the browser on how to load the page + additional resources"
+      },
+      {
+         "question_type":"mc",
+         "question_text":"What is the body tag used for?",
+         "question_options":[
+            "Important info that should be displayed at the top of the web browser",
+            "Information that isn't rendered on the web browser",
+            "Content that is to be rendered or displayed on the browser window",
+            "Info that should be displayed at the bottom of the web browser"
+         ],
+         "correct_answer":"Content that is to be rendered or displayed on the browser window",
+         "answer_explanation":"The information within the body tag is what's parsed and rendered."
+      },
+      {
+         "question_type":"mc",
+         "question_text":"The src attribute _______.",
+         "question_options":[
+            "specifies the URL of the page that the link goes to",
+            "specifies an alternate text for an image",
+            "specifies the path to the image to be displayed",
+            "specifies the height of an image"
+         ],
+         "correct_answer":"specifies the path to the image to be displayed",
+         "answer_explanation":"It is commonly used in the <img> tag."
+      },
+      {
+         "question_type":"tf",
+         "question_text":"HTML is a programming language.",
+         "question_options":[
+            "True",
+            "False"
+         ],
+         "correct_answer":"False",
+         "answer_explanation":"HTML stands for HyperText Markup Language, so HTML is a markup language."
+      },
+      {
+         "question_type":"tf",
+         "question_text":"The script tag is used for JavaScript.",
+         "question_options":[
+            "True",
+            "False"
+         ],
+         "correct_answer":"True",
+         "answer_explanation":"<script> is used in an html file whereever there are JavaScript snippets."
+      },
+      {
+         "question_type":"mc",
+         "question_text":"<____> defines a list with bullet points.",
+         "question_options":[
+            "ol",
+            "al",
+            "ul",
+            "li"
+         ],
+         "correct_answer":"ul",
+         "answer_explanation":"<ul> defines an unordered list."
+      },
+      {
+         "question_type":"mc",
+         "question_text":"<____> defines a list with numbers.",
+         "question_options":[
+            "ol",
+            "al",
+            "ul",
+            "li"
+         ],
+         "correct_answer":"ol",
+         "answer_explanation":"<ol> defines an ordered list."
+      },
+      {
+         "question_type":"mc",
+         "question_text":"The href attribute _______.",
+         "question_options":[
+            "specifies the URL of the page that the link goes to",
+            "specifies an alternate text for an image",
+            "specifies the path to the image to be displayed",
+            "specifies the height of an image"
+         ],
+         "correct_answer":"specifies the URL of the page that the link goes to",
+         "answer_explanation":"It is used in tags like <a>, which are used to define hyperlinks."
+      },
+      {
+         "question_type":"mc",
+         "question_text":"The alt attribute _______.",
+         "question_options":[
+            "specifies the URL of the page that the link goes to",
+            "specifies an alternate text for an image",
+            "specifies the path to the image to be displayed",
+            "specifies the height of an image"
+         ],
+         "correct_answer":"specifies an alternate text for an image",
+         "answer_explanation":"The alt attribute is handy for when an image cannot be displayed for some reason"
+      },
+      {
+         "question_type":"mc",
+         "question_text":"For the target tag, which attribute opens the document in a parent frame?",
+         "question_options":[
+            "parent",
+            "self",
+            "blank",
+            "top"
+         ],
+         "correct_answer":"parent",
+         "answer_explanation":"target= \"parent\" opens the document in a parent frame."
+      },
+      {
+         "question_type":"mc",
+         "question_text":"The height attribute _______.",
+         "question_options":[
+            "specifies the URL of the page that the link goes to",
+            "specifies an alternate text for an image if the image cannot be displayed for some reason",
+            "specifies the path to the image to be displayed",
+            "specifies the height of an image"
+         ],
+         "correct_answer":"specifies the height of an image",
+         "answer_explanation":"The width and height attributes can be in either percentages or pixels."
+      }
+   ]
+}

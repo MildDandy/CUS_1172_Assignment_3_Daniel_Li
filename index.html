@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+  <script src="view_script.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&family=Staatliches&display=swap" rel="stylesheet">
+  <title>Project 3: JavaScript Quiz</title>
+  <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Desktop_computer_clipart_-_Yellow_theme.svg/2560px-Desktop_computer_clipart_-_Yellow_theme.svg.png">
+</head>
+<body>
+  <div>
+    <ul>
+      <li> <span>Question 1</span> </li>
+      <li> <span>Question 2</span> </li>
+      <li> <span>Question 3</span> </li>
+      <li> <span>Feedback</span> </li>
+      <li> <span>Ending</span> </li>
+    </ul>
+<!-- Counter Element (div class = "counter" style = "margin-top: 20px") -->
+  </div>
+  <!-- Everything that is shown -->
+    <div id="view_widget">
+      <div id="scoreboard">
+    </div>
+  </div>
+  <!-- Whenever a question is answered wrong -->
+  <div id="feedback_widget">
+</div>
+</body>
+
+<!-- 4 Different Views -->
+<script id="question_view_mc" type="text/x-handlebars-template">
+  <div class="card-body container font-weight-bold">
+
+    <!-- Score Card on the Side that stays active after every question -->
+      <div style="width:500px">
+      Time: <span id="minutes"></span>:<span id="seconds"></span>
+    </div>
+    <div class="text-danger">
+      Score: 0 / 20
+    </div>
+    <div class="text-primary">
+      Type: Multiple Choice
+    </div>
+
+      <!--<h4 class="card-title">{{first_name}}</h4> -->
+      <p class="card-text">Hello {{queue.question_text}}</p>
+      <button class="btn btn-primary" data-action="submit">Submit</button>
+  <div class="row h-50 mt-3 text-center justify-content-md-center">
+    <div id="option_a" class="col-md-4 bg-danger p-2 border rounded" >A</div>
+    <div id="option_b" class="col-md-4 bg-success p-2 border rounded" >B</div>
+  </div>
+  <div class="row h-50 text-center justify-content-md-center">
+    <div id="option_c" class="col-md-4 bg-primary p-2 border rounded" >C</div>
+    <div id="option_d" class="col-md-4 bg-warning p-2 border rounded" >D</div>
+  </div>
+      </div>
+      <div class="card" style="width: 12rem;">
+        <div class="card-body">
+          <h5 class="card-title">Time</h5>
+          <h6 class="card-subtitle mb-2" id="minutes">00:00</h6>:
+          <h5 class="card-title">Score</h5>
+          <h6 class="card-subtitle mb-2 text-danger">0 / 20</h6>
+          <h5 class="card-title">Question Type</h5>
+          <h6 class="card-subtitle mb-2 text-primary">Multiple Choice</h6>
+        </div>
+      </div>
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Quiz 1 and Quiz 2 will have different backgrounds to differentiate them-->
+<script id="intro_view" type="text/x-handlebars-template">
+  <div class="container">
+    <form action="/action_page.php">
+  <label class="font-weight-bold"for="first_name">Enter your name here.</label><br>
+  <input type="text" id="first_name" value="Daniel"><br>
+</form>
+    <div class="card-body">
+      <h4 class="card-title text-primary">Welcome! Choose a quiz! </h4>
+      <div class="container">
+      <div class="row justify-content-around">
+        <div class="col-sm">
+         Quiz 1: HTML / CSS
+        </div>
+        <div class="col-sm">
+         Quiz 2: JavaScript
+        </div>
+      </div>
+      <div class="row justify-content-around">
+        <div class="col-sm">
+         <button id="button_quiz_1" data-action="button_quiz_1" class="btn btn-danger border">Quiz 1</button>
+        </div>
+        <div class="col-sm">
+         <button id="button_quiz_2" data-action="button_quiz_2" class="btn btn-primary border">Quiz 2</button>
+        </div>
+      </div>
+    </div>
+      <button id="button_submit" data-action="submit" class="btn btn-primary mt-1">Submit</button>
+    </div>
+    </div>
+  </script>
+
+<script id="feedback_view" type="text/x-handlebars-template">
+  <div class="container">
+    <div class="card-body">
+      <h4 class="card-title" style="color:red;">{{name}}</h4>
+      <p class="card-text">{{expertise}}</p>
+      <h1> Explanation </h1>
+      <p>JavaScript is defined as a language that </p>
+      <button class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+  </script>
+
+
+
+<script id="ending_view" type="text/x-handlebars-template">
+  <div class="container">
+    <!-- 80% or Higher means passing the Quiz-->
+    <!-- Passing the Quiz will have a green background-->
+    <!-- Failing the Quiz will have a pink background-->
+    <div class="card-body">
+      <h1>Retake the Quiz</h1>
+      <h1>Return to Main Menu</h1>
+      <h2>Fix the Timer Function</h2>
+      <h2>Change the Update View function based on appState. </h2>
+      <h2>Change the Render View function based on appState.</h2>
+      <p> You got 15 out of 20 questions right.</p>
+      <p> You passed the quiz! Good job. :D </p>
+      <p> You didn't pass the quiz. Try again? </p>
+      <button class="btn btn-danger">Retake the Quiz</button>
+      <button class="btn btn-primary">Return to Main Menu</button>
+    </div>
+  </div>
+  </script>
+</html>

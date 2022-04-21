@@ -1,0 +1,61 @@
+.card-body{
+  background-color:pink;
+}
+
+#scoreboard{
+
+}
+
+body{
+  background-color:#e6fff2;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Font for the answer choices. */
+p {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+/*Font for headings */
+
+li {
+  float: left;
+  font-family: 'Staatliches', cursive;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li span {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Effects when hovering over answer choices*/
+.col-md-4:hover {
+  opacity:0.75;
+  border-color: black;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #111;
+}
+
+/* Change the link color to #111 (black) on hover */
+li span:hover {
+  background-color: #111;
+}
