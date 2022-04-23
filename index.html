@@ -53,14 +53,14 @@
 
       <!--<h4 class="card-title">{{first_name}}</h4> -->
       <p class="card-text">{{appState.current_model.question_text}}</p>
-      <button class="btn btn-primary" data-action="submit">Submit</button>
+      <button class="btn btn-primary" data-action="submit">Next</button>
   <div class="row h-50 mt-3 text-center justify-content-md-center">
-    <div id="option_a" class="col-md-4 bg-danger p-2 border rounded" >A</div>
-    <div id="option_b" class="col-md-4 bg-success p-2 border rounded" >B</div>
+    <div id="option_a" class="text-light col-md-4 bg-danger p-2 border rounded" >{{appState.current_model.question_options.[0]}}</div>
+    <div id="option_b" class="text-light col-md-4 bg-success p-2 border rounded" >{{appState.current_model.question_options.[1]}}</div>
   </div>
   <div class="row h-50 text-center justify-content-md-center">
-    <div id="option_c" class="col-md-4 bg-primary p-2 border rounded" >C</div>
-    <div id="option_d" class="col-md-4 bg-warning p-2 border rounded" >D</div>
+    <div id="option_c" class="text-light col-md-4 bg-primary p-2 border rounded" >{{appState.current_model.question_options.[2]}}</div>
+    <div id="option_d" class="text-light col-md-4 bg-warning p-2 border rounded" >{{appState.current_model.question_options.[3]}}</div>
   </div>
       </div>
       <div class="card" style="width: 12rem;">

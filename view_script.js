@@ -102,8 +102,7 @@ function handle_app_widget_event(e){
        // Update the state.
        appState.current_question = appState.current_question + 1;
        setQuestionView(appState);
-       score = score + 1;
-       document.querySelector("#score").innerHTML = "Score: " + score + " / 10";
+       appState.current_score += 1;
      }
    }
 

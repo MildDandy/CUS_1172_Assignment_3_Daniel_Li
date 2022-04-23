@@ -86,7 +86,7 @@
       },
       {
          "question_type":"mc",
-         "question_text":"\\:https://www.google.com/\\: is an absolute URL.",
+         "question_text":"https://www.google.com/: is an absolute URL.",
          "question_options":[
            "True",
            "False",
