@@ -46,7 +46,8 @@ var queue = {};
       current_view : "#intro_view",
       current_question : -1,
       current_model : {},
-      current_score : 0
+      current_score : 0,
+      response : "CORRECT!!!"
   }
 
 
@@ -67,7 +68,7 @@ function handle_app_widget_event(e){
   console.log("Button was pressed.");
   //console.log(e.target);
   //console.log(e.target.id);
-  console.log(e.target.dataset.action);
+  //console.log(e.target.dataset.answer);
   //console.log(e.target.class);
   //document.querySelector()
   //alert(quizData.quiz_1);
@@ -104,17 +105,8 @@ function handle_app_widget_event(e){
        setQuestionView(appState);
        appState.current_score += 1;
      }
-     if(e.target.dataset.answer == "a"){
-
-     }
-     if(e.target.dataset.answer == "b"){
-
-     }
-     if(e.target.dataset.answer == "c"){
-
-     }
-     if(e.target.dataset.answer == "d"){
-
+     if(e.target.dataset.answer == "a" || "b" || "c" || "d"){
+       isCorrect = check_user_response(e.target.dataset.answer, appState.current_model);
      }
    }
 
@@ -181,6 +173,21 @@ var render_view = (view_id, model_index) => {
 //Quiz 1 will have a pink background
 //Quiz 2 will have a light-green background
 
+function display(){
+  let text = document.getElementById("type");
+  text.classList.remove("hide");
+  setTimeout(function () {
+    text.classList.add("fade-in");
+    setTimeout(function () {
+      text.classList.remove("fade-in");
+      setTimeout(function () {
+        text.classList.add("hide");
+        appState.response = "";
+      }, 1000);
+    }, 2000);
+  });
+}
+
 //Quiz timer
 var sec = 0;
 function pad ( val ) { return val > 9 ? val : "0" + val; }
@@ -191,10 +198,18 @@ setInterval( function(){
 
 
 function check_user_response(user_answer, model) {
-  if (user_answer == model.correct_answer) {
+  console.log("Your Answer: "+ user_answer);
+  console.log("Correct Answer: "+ model.correct_answer);
+  if (user_answer === model.correct_answer) {
+    appState.current_score += 1;
+    appState.response = "CORRECT!!!";
+    display();
     return true; //Congrats for 1 second aka make another function
   }
-  return false; //Wrong answer aka display the feedback view
+  else{
+    appState.response = "INCORRECT!!!";
+    return false; //Wrong answer aka display the feedback view
+  }
 }
 
 function updateQuestion(appState) {

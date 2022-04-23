@@ -59,3 +59,18 @@ li a:hover {
 li span:hover {
   background-color: #111;
 }
+
+/*Handles the "CORRECT!" prompt when an question is answered properly*/
+#type {
+  opacity: 0;
+  transition: 1s;
+}
+
+#type.fade-in {
+  opacity: 1;
+  transition: 1s;
+}
+
+#type.hide {
+  display: none;
+}

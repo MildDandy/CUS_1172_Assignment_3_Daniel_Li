@@ -45,7 +45,7 @@
       Question #{{appState.current_question}}
     </div>
     <div class="text-danger" id="score">
-      Score: 0 / 10
+      Score: {{appState.current_score}} / 10
     </div>
     <div class="text-primary">
       Type: Multiple Choice
@@ -63,15 +63,7 @@
     <div id="option_d" data-answer="d" class="text-light col-md-4 bg-warning p-2 border rounded" >{{appState.current_model.question_options.[3]}}</div>
   </div>
       </div>
-      <div class="card" style="width: 12rem;">
-        <div class="card-body">
-          <h5 class="card-title">Time</h5>
-          <h6 class="card-subtitle mb-2" id="minutes">00:00</h6>:
-          <h5 class="card-title">Score</h5>
-          <h6 class="card-subtitle mb-2 text-danger" id="score">0 / 10</h6>
-          <h5 class="card-title">Question Type</h5>
-          <h6 class="card-subtitle mb-2 text-primary" id="type">Multiple Choice</h6>
-        </div>
+          <h1 class="mb-2 text-success hide" id="type">{{appState.response}}</h6>
       </div>
   </script>
 
