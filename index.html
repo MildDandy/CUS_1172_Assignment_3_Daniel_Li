@@ -53,7 +53,6 @@
 
       <!--<h4 class="card-title">{{first_name}}</h4> -->
       <div class="card-text">{{appState.current_model.question_text}}</div>
-      <button class="btn btn-primary" data-action="submit">Skip Question</button>
   <div class="row h-50 mt-3 text-center justify-content-md-center">
     <div id="option_a" data-answer="a" class="text-light col-md-4 bg-danger p-2 border rounded" >{{appState.current_model.question_options.[0]}}</div>
     <div id="option_b" data-answer="b" class="text-light col-md-4 bg-success p-2 border rounded" >{{appState.current_model.question_options.[1]}}</div>
@@ -64,7 +63,8 @@
   </div>
       </div>
           <h1 class="m-2 text-success hide" id="type">✅{{appState.response}}</h6>
-          <h2 class="m-2 text-warning hide" id="explanation">❌<u>Explanation</u>: {{appState.current_model.answer_explanation}}</h6>
+          <h2 class="m-2 text-warning hide" id="explanation"><div class="text-danger">❌WRONG</div> <u>Explanation</u>: {{appState.current_model.answer_explanation}}<br><button class="btn btn-primary hide" data-action="submit">Next Question</button></h2>
+
       </div>
   </script>
 

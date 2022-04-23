@@ -34,9 +34,8 @@ var quiz_1  = [
   ];
 */
 
-var score = 0;
 
-
+var answered = false;
 //Variable that tells what quiz was chosen
 var quiz_number = "";
 var queue = {};
@@ -100,15 +99,20 @@ function handle_app_widget_event(e){
 
     if (e.target.dataset.action == "submit") {
        // Controller - implement logic.
-       isCorrect = check_user_response(e.target.dataset.answer, appState.current_model);
+       //isCorrect = check_user_response(e.target.dataset.answer, appState.current_model);
        // Update the state.
        appState.current_question = appState.current_question + 1;
        setQuestionView(appState);
+       answered = false;
+       text3.classList.add("hide");
+       text4.classList.add("hide");
        //appState.current_score += 1;
      }
-     if(e.target.dataset.answer == "a" || "b" || "c" || "d"){
-       isCorrect = check_user_response(e.target.dataset.answer, appState.current_model);
-     }
+     if(answered == false){
+       if(e.target.dataset.answer == "a" || "b" || "c" || "d"){
+         isCorrect = check_user_response(e.target.dataset.answer, appState.current_model);
+       }
+   }
    }
 
    /*
@@ -177,7 +181,7 @@ var render_view = (view_id, model_index) => {
 function display(){
   let text = document.getElementById("type");
   text.classList.remove("hide");
-  
+
   setTimeout(function () {
     text.classList.add("fade-in");
     setTimeout(function () {
@@ -186,6 +190,7 @@ function display(){
         text.classList.add("hide");
         appState.current_question = appState.current_question + 1;
         setQuestionView(appState);
+        answered = false;
       }, 1000);
     }, 2000);
   });
@@ -208,6 +213,7 @@ setInterval( function(){
 function check_user_response(user_answer, model) {
   //console.log("Your Answer: "+ user_answer);
   //console.log("Correct Answer: "+ model.correct_answer);
+  answered = true;
   if (user_answer === model.correct_answer) {
     appState.current_score += 1;
     appState.response = "CORRECT!!!";

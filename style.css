@@ -70,6 +70,6 @@ li span:hover {
   transition: 1s;
 }
 
-#type.hide, #explanation.hide {
+#type.hide, #explanation.hide, .button {
   display: none;
 }
