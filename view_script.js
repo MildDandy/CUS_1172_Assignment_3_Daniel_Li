@@ -87,7 +87,7 @@ function handle_app_widget_event(e){
 
   if (appState.current_view == "#intro_view"){
     if (e.target.dataset.action == "button_quiz_1") {
-
+        sec = 0;
         quiz_number = "quiz_1";
         appState.current_question = 0;
         setQuestionView(appState);
