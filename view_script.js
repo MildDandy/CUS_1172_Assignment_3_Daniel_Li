@@ -226,6 +226,7 @@ function updateQuestion(appState) {
 async function setQuestionView(appState) {
   if (appState.current_question == -2) {
     appState.current_view  = "#end_view";
+    update_view(appState);
     return
   }
   console.log(appState.current_question);
@@ -248,6 +249,7 @@ await fetch(`https://my-json-server.typicode.com/MildDandy/CUS_1172_Assignment_3
   }
   if (appState.current_model.question_type == "mc"){
     appState.current_model = queue[appState.current_question];
+    console.log(queue.length);
     //onsole.log(appState.current_model);
     //console.log(queue[appState.current_question]);
     appState.current_view = "#question_view_mc";
