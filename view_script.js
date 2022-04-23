@@ -34,6 +34,8 @@ var quiz_1  = [
   ];
 */
 
+
+
 //Variable that tells what quiz was chosen
 var quiz_number = "";
 var queue = {};
@@ -170,7 +172,6 @@ setInterval( function(){
     $("#seconds").html(pad(++sec%60));
     $("#minutes").html(pad(parseInt(sec/60,10)));
 }, 1000);
-
 
 
 function check_user_response(user_answer, model) {
