@@ -34,6 +34,7 @@ var quiz_1  = [
   ];
 */
 
+var score = 0;
 
 
 //Variable that tells what quiz was chosen
@@ -101,9 +102,12 @@ function handle_app_widget_event(e){
        // Update the state.
        appState.current_question = appState.current_question + 1;
        setQuestionView(appState);
-
+       score = score + 1;
+       document.querySelector("#score").innerHTML = score + " / 10";
      }
    }
+
+   /*
   if (appState.current_view == "#question_view_true_false") {
 
     if (e.target.dataset.action == "answer") {
@@ -120,7 +124,8 @@ function handle_app_widget_event(e){
 
      }
    }
-
+*/
+/*
    // Handle answer event for  text questions.
    if (appState.current_view == "#question_view_text_input") {
        if (e.target.dataset.action == "submit") {
@@ -135,7 +140,7 @@ function handle_app_widget_event(e){
 
        }
     }
-
+*/
     // Handle answer event for  text questions.
     if (appState.current_view == "#end_view") {
         if (e.target.dataset.action == "start_again") {
@@ -241,7 +246,7 @@ function update_view(appState){
 }
 
 function pass_fail(score, first_name){
-  if(score >= 16){
+  if(score >= 8){
       document.getElementById("demo").innerHTML = "Congratulations {{name}}! You pass the quiz!";
   }
   else{

@@ -12,17 +12,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&family=Staatliches&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Source+Sans+Pro:wght@200&family=Staatliches&family=Ubuntu&display=swap" rel="stylesheet">
   <title>Project 3: JavaScript Quiz</title>
   <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Desktop_computer_clipart_-_Yellow_theme.svg/2560px-Desktop_computer_clipart_-_Yellow_theme.svg.png">
 </head>
 <body>
   <div>
     <ul>
-      <li> <span>Question 1</span> </li>
-      <li> <span>Question 2</span> </li>
-      <li> <span>Question 3</span> </li>
-      <li> <span>Feedback</span> </li>
-      <li> <span>Ending</span> </li>
+      <li> <span>Assignment 3: JavaScript SPA Quiz</span> </li>
     </ul>
 <!-- Counter Element (div class = "counter" style = "margin-top: 20px") -->
   </div>
@@ -44,7 +41,7 @@
       <div style="width:500px">
       Time: <span id="minutes"></span>:<span id="seconds"></span>
     </div>
-    <div class="text-danger">
+    <div class="text-danger" id="score">
       Score: 0 / 10
     </div>
     <div class="text-primary">
@@ -68,7 +65,7 @@
           <h5 class="card-title">Time</h5>
           <h6 class="card-subtitle mb-2" id="minutes">00:00</h6>:
           <h5 class="card-title">Score</h5>
-          <h6 class="card-subtitle mb-2 text-danger" id="score">0 / 20 {{this.quiz_number}}</h6>
+          <h6 class="card-subtitle mb-2 text-danger" id="score">0 / 10</h6>
           <h5 class="card-title">Question Type</h5>
           <h6 class="card-subtitle mb-2 text-primary" id="type">Multiple Choice</h6>
         </div>
