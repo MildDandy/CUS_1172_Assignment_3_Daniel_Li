@@ -191,7 +191,7 @@ setInterval( function(){
 
 
 function check_user_response(user_answer, model) {
-  if (user_answer == model.correctAnswer) {
+  if (user_answer == model.correct_answer) {
     return true; //Congrats for 1 second aka make another function
   }
   return false; //Wrong answer aka display the feedback view

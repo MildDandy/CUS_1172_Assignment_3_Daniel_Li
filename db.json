@@ -9,7 +9,7 @@
             "head",
             "body"
          ],
-         "correct_answer":"img",
+         "correct_answer":"b",
          "answer_explanation":"<img> is the correct tag used for dealing with image embeds."
       },
       {
@@ -21,7 +21,7 @@
             "2",
             "-1"
          ],
-         "correct_answer":"0",
+         "correct_answer":"a",
          "answer_explanation":"The index of an array always starts at 0 when working with Java, due to how the compiler works."
       },
       {
@@ -33,7 +33,7 @@
            "",
            ""
          ],
-         "correct_answer":"True",
+         "correct_answer":"a",
          "answer_explanation":"img is a special tag, so you can just use a / on the opening tag if there is no closing tag. Ex. <img src=... />"
       },
       {
@@ -45,7 +45,7 @@
            "",
            ""
          ],
-         "correct_answer":"True",
+         "correct_answer":"a",
          "answer_explanation":"Java is a statically typed language, meaning you MUST declare the variable type before assigning a value e.g. \"int x = 5\""
       },
       {
@@ -57,7 +57,7 @@
             "tr",
             "td"
          ],
-         "correct_answer":"tr",
+         "correct_answer":"c",
          "answer_explanation":"<tr> is used to specify how many rows a table has."
       },
       {
@@ -69,7 +69,7 @@
             "identity",
             "isotope"
          ],
-         "correct_answer":"templating",
+         "correct_answer":"b",
          "answer_explanation":"Templating engines utilize a different syntax that replaces placeholders to assist on the front-end and back-end."
       },
       {
@@ -81,7 +81,7 @@
            "",
            ""
          ],
-         "correct_answer":"False",
+         "correct_answer":"b",
          "answer_explanation":"It is not required, but it is recommended to make your HTML tags lowercase, and is even demanded from stricter document types like XHTML. Ex. <P> means the same as <p>"
       },
       {
@@ -93,7 +93,7 @@
            "",
            ""
          ],
-         "correct_answer":"True",
+         "correct_answer":"a",
          "answer_explanation":"Absolute URLs link to something that is hosted on another website."
       },
       {
@@ -105,7 +105,7 @@
             "JavaScript",
             "JSON"
          ],
-         "correct_answer":"CSS",
+         "correct_answer":"b",
          "answer_explanation":"Bootstrap is used to help streamline CSS."
       },
       {
@@ -117,7 +117,7 @@
             "Content that is to be rendered or displayed on the browser window",
             "Info that should be displayed at the bottom of the web browser"
          ],
-         "correct_answer":"Information that isn't rendered on the web browser",
+         "correct_answer":"b",
          "answer_explanation":"The head tag provides info to the browser on how to load the page + additional resources"
       },
       {
@@ -129,7 +129,7 @@
             "Content that is to be rendered or displayed on the browser window",
             "Info that should be displayed at the bottom of the web browser"
          ],
-         "correct_answer":"Content that is to be rendered or displayed on the browser window",
+         "correct_answer":"c",
          "answer_explanation":"The information within the body tag is what's parsed and rendered."
       },
       {
@@ -141,7 +141,7 @@
             "specifies the path to the image to be displayed",
             "specifies the height of an image"
          ],
-         "correct_answer":"specifies the path to the image to be displayed",
+         "correct_answer":"c",
          "answer_explanation":"It is commonly used in the <img> tag."
       },
       {
@@ -153,7 +153,7 @@
            "",
            ""
          ],
-         "correct_answer":"False",
+         "correct_answer":"b",
          "answer_explanation":"HTML stands for HyperText Markup Language, so HTML is a markup language."
       },
       {
@@ -165,7 +165,7 @@
            "",
            ""
          ],
-         "correct_answer":"True",
+         "correct_answer":"a",
          "answer_explanation":"<script> is used in an html file whereever there are JavaScript snippets."
       },
       {
@@ -177,7 +177,7 @@
             "ul",
             "li"
          ],
-         "correct_answer":"ul",
+         "correct_answer":"c",
          "answer_explanation":"<ul> defines an unordered list."
       },
       {
@@ -189,7 +189,7 @@
             "ul",
             "li"
          ],
-         "correct_answer":"ol",
+         "correct_answer":"a",
          "answer_explanation":"<ol> defines an ordered list."
       },
       {
@@ -201,7 +201,7 @@
             "specifies the path to the image to be displayed",
             "specifies the height of an image"
          ],
-         "correct_answer":"specifies the URL of the page that the link goes to",
+         "correct_answer":"a",
          "answer_explanation":"It is used in tags like <a>, which are used to define hyperlinks."
       },
       {
@@ -213,7 +213,7 @@
             "specifies the path to the image to be displayed",
             "specifies the height of an image"
          ],
-         "correct_answer":"specifies an alternate text for an image",
+         "correct_answer":"b",
          "answer_explanation":"The alt attribute is handy for when an image cannot be displayed for some reason"
       },
       {
@@ -225,7 +225,7 @@
             "blank",
             "top"
          ],
-         "correct_answer":"parent",
+         "correct_answer":"a",
          "answer_explanation":"target= \"parent\" opens the document in a parent frame."
       },
       {
@@ -237,7 +237,7 @@
             "specifies the path to the image to be displayed",
             "specifies the height of an image"
          ],
-         "correct_answer":"specifies the height of an image",
+         "correct_answer":"d",
          "answer_explanation":"The width and height attributes can be in either percentages or pixels."
       }
    ]
