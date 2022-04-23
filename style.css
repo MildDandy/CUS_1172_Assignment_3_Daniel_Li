@@ -18,12 +18,10 @@ ul {
 }
 
 /* Font for the answer choices. */
-p {
-    font-family: 'Source Sans Pro', sans-serif;
-}
+
 /*Font for headings */
 
-li {
+p, li {
   float: left;
   font-family: 'Ubuntu', sans-serif;
 }
@@ -61,16 +59,17 @@ li span:hover {
 }
 
 /*Handles the "CORRECT!" prompt when an question is answered properly*/
-#type {
-  opacity: 0;
-  transition: 1s;
-}
 
-#type.fade-in {
+#type{
   opacity: 1;
   transition: 1s;
 }
 
-#type.hide {
+#type.fade-in, #explanation.fade-in {
+  opacity: 1;
+  transition: 1s;
+}
+
+#type.hide, #explanation.hide {
   display: none;
 }

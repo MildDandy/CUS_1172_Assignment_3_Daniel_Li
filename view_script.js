@@ -82,7 +82,8 @@ function handle_app_widget_event(e){
   */
   if(e.target.dataset.action == "button_quiz_2"){
     quiz_number = "quiz_2";
-    update_view("#ending_view");
+    appState.current_view = "#ending_view"
+    update_view(appState);
   }
 
   if (appState.current_view == "#intro_view"){
@@ -145,8 +146,8 @@ function handle_app_widget_event(e){
     }
 */
     // Handle answer event for  text questions.
-    if (appState.current_view == "#end_view") {
-        if (e.target.dataset.action == "start_again") {
+    if (appState.current_view == "#ending_view") {
+        if (e.target.dataset.action == "menu") {
           appState.current_view =  "#intro_view";
           appState.current_model = {
           }
@@ -176,6 +177,7 @@ var render_view = (view_id, model_index) => {
 function display(){
   let text = document.getElementById("type");
   text.classList.remove("hide");
+  
   setTimeout(function () {
     text.classList.add("fade-in");
     setTimeout(function () {
@@ -189,6 +191,11 @@ function display(){
   });
 }
 
+function explain(){
+  let text2 = document.getElementById("explanation");
+  text2.classList.remove("hide");
+}
+
 //Quiz timer
 var sec = 0;
 function pad ( val ) { return val > 9 ? val : "0" + val; }
@@ -199,8 +206,8 @@ setInterval( function(){
 
 
 function check_user_response(user_answer, model) {
-  console.log("Your Answer: "+ user_answer);
-  console.log("Correct Answer: "+ model.correct_answer);
+  //console.log("Your Answer: "+ user_answer);
+  //console.log("Correct Answer: "+ model.correct_answer);
   if (user_answer === model.correct_answer) {
     appState.current_score += 1;
     appState.response = "CORRECT!!!";
@@ -208,6 +215,7 @@ function check_user_response(user_answer, model) {
     return true; //Congrats for 1 second aka make another function
   }
   else{
+    explain();
     return false; //Wrong answer aka display the feedback view
   }
 }
@@ -225,9 +233,9 @@ function updateQuestion(appState) {
 
 async function setQuestionView(appState) {
   if (appState.current_question == -2) {
-    appState.current_view  = "#end_view";
+    appState.current_view  = "#ending_view";
     update_view(appState);
-    return
+    return;
   }
   console.log(appState.current_question);
 
@@ -249,7 +257,6 @@ await fetch(`https://my-json-server.typicode.com/MildDandy/CUS_1172_Assignment_3
   }
   if (appState.current_model.question_type == "mc"){
     appState.current_model = queue[appState.current_question];
-    console.log(queue.length);
     //onsole.log(appState.current_model);
     //console.log(queue[appState.current_question]);
     appState.current_view = "#question_view_mc";
