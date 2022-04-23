@@ -217,14 +217,20 @@ await fetch(`https://my-json-server.typicode.com/MildDandy/CUS_1172_Assignment_3
   }
   )
 console.log(queue);
-
-  if (appState.current_model.question_type == "mc")
+  if (appState.current_question == 0) {
+      appState.current_model = queue[appState.current_question];
+  }
+  if (appState.current_model.question_type == "mc"){
     appState.current_model = queue[appState.current_question];
+    console.log(appState.current_model);
+    console.log(queue[appState.current_question]);
     appState.current_view = "#question_view_mc";
     console.log(queue[appState.current_question].question_text);
-    console.log(appState);
     update_view(appState);
-    console.log(appState);
+    //console.log(appState
+    console.log(queue[appState.current_question].question_text);
+    console.log(appState.current_model);
+  }
 /*
   else if (appState.current_model.questionType == "tf") {
     appState.current_model = quiz_1[appState.current_question];
@@ -253,52 +259,3 @@ function pass_fail(score, first_name){
       document.getElementById("demo").innerHTML = "Sorry {{name}}, you fail the quiz.";
   }
 }
-
-
-/*
-async function fetch_users() {
-  try {
-    // Notice: the fetch call returns a Promise Object.
-    // await 'pauses' the execution in this code sequece waiting for the
-    // promise to be fullfilled (i.e. the data arrive)  - in a non-clocking way.
-    // Once promise is fullfilled the 'response' variable  holds an object of type Response
-    const response = await fetch('https://randomuser.me/api/')
-    // Notice: the json() method itself returns a Promise object
-    // (since parsing the json response might take some time). Hence we need to
-    // await for the parsiong to complete.
-    const result = await response.json()
-    // At this point we have the actual json parsed results .
-    console.log(result);
-  } catch (err) {
-    console.error(err);
-  }
-}
-*/
-// Invoke the async function.
-
-function makeRequest(location) {
-  return new Promise((resolve, reject) => {
-    console.log("Making Quest to ${location}")
-    if(location === "Google"){
-      resolve("Google says hi")
-    } else {
-      reject("We can only talk to Google")
-    }
-  })
-}
-
-function processRequest(response) {
-  return new Promise((resolve, reject) => {
-    console.log("Processing response")
-    resolve("Extra information + ${response}")
-  })
-}
-
-makeRequest("Facebook").then(response => {
-  console.log("Response Received")
-  return processRequest(response)
-}).then(processResponse => {
-  console.log(processResponse)
-}).catch(err => {
-  console.log(err)
-})
