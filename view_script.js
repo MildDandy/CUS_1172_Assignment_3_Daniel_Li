@@ -103,7 +103,7 @@ function handle_app_widget_event(e){
        // Update the state.
        appState.current_question = appState.current_question + 1;
        setQuestionView(appState);
-       appState.current_score += 1;
+       //appState.current_score += 1;
      }
      if(e.target.dataset.answer == "a" || "b" || "c" || "d"){
        isCorrect = check_user_response(e.target.dataset.answer, appState.current_model);
@@ -182,7 +182,8 @@ function display(){
       text.classList.remove("fade-in");
       setTimeout(function () {
         text.classList.add("hide");
-        appState.response = "";
+        appState.current_question = appState.current_question + 1;
+        setQuestionView(appState);
       }, 1000);
     }, 2000);
   });
@@ -207,7 +208,6 @@ function check_user_response(user_answer, model) {
     return true; //Congrats for 1 second aka make another function
   }
   else{
-    appState.response = "INCORRECT!!!";
     return false; //Wrong answer aka display the feedback view
   }
 }
