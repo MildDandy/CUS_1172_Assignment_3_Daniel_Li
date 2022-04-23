@@ -104,6 +104,18 @@ function handle_app_widget_event(e){
        setQuestionView(appState);
        appState.current_score += 1;
      }
+     if(e.target.dataset.answer == "a"){
+
+     }
+     if(e.target.dataset.answer == "b"){
+
+     }
+     if(e.target.dataset.answer == "c"){
+
+     }
+     if(e.target.dataset.answer == "d"){
+
+     }
    }
 
    /*
@@ -215,20 +227,20 @@ await fetch(`https://my-json-server.typicode.com/MildDandy/CUS_1172_Assignment_3
     console.error(err);
   }
   )
-console.log(queue);
+//console.log(queue);
   if (appState.current_question == 0) {
       appState.current_model = queue[appState.current_question];
   }
   if (appState.current_model.question_type == "mc"){
     appState.current_model = queue[appState.current_question];
-    console.log(appState.current_model);
-    console.log(queue[appState.current_question]);
+    //onsole.log(appState.current_model);
+    //console.log(queue[appState.current_question]);
     appState.current_view = "#question_view_mc";
     console.log(queue[appState.current_question].question_text);
     update_view(appState);
-    //console.log(appState
-    console.log(queue[appState.current_question].question_text);
-    console.log(appState.current_model);
+    //console.log(appState)
+    //console.log(queue[appState.current_question].question_text);
+    //console.log(appState.current_model);
   }
 /*
   else if (appState.current_model.questionType == "tf") {
@@ -246,7 +258,7 @@ console.log(queue);
 //Updating the View widget
 function update_view(appState){
   var html = render_view(appState.current_view, appState.current_model);
-  console.log(queue);
+  //console.log(queue);
   document.querySelector("#view_widget").innerHTML = html;
 }
 
