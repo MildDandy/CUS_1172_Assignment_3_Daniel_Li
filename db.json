@@ -119,7 +119,9 @@
          ],
          "correct_answer":"b",
          "answer_explanation":"The head tag provides info to the browser on how to load the page + additional resources"
-      },
+      }
+   ],
+    "quiz_2": [
       {
          "question_type":"mc",
          "question_text":"What is the body tag used for?",

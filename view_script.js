@@ -231,7 +231,7 @@ await fetch(`https://my-json-server.typicode.com/MildDandy/CUS_1172_Assignment_3
     //console.log(queue[appState.current_question].question_text);
     update_view(appState);
     //console.log(appState)
-    //console.log(queue[appState.current_question].question_text);
+    console.log(queue[appState.current_question-1].question_text);
     //console.log(appState.current_model);
   }
 /*
@@ -245,7 +245,7 @@ await fetch(`https://my-json-server.typicode.com/MildDandy/CUS_1172_Assignment_3
     update_view(appState);
 */
   //console.log(appState.current_model.length);
-if (appState.current_question == 20) {
+if (appState.current_question == 10) {
   pass_fail();
   appState.current_view  = "#ending_view";
   update_view(appState);
