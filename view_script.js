@@ -58,7 +58,7 @@ function handle_app_widget_event(e){
         sec = 0;
         quiz_number = "quiz_1";
         appState.name = document.querySelector("#first_name").value;
-        appState.current_question = 0;
+        appState.current_question = 1;
         setQuestionView(appState);
     }
   }
@@ -220,15 +220,15 @@ await fetch(`https://my-json-server.typicode.com/MildDandy/CUS_1172_Assignment_3
   }
   )
 //console.log(queue);
-  if (appState.current_question == 0) {
-      appState.current_model = queue[appState.current_question];
+  if (appState.current_question == 1) {
+      appState.current_model = queue[appState.current_question-1];
   }
   if (appState.current_model.question_type == "mc"){
-    appState.current_model = queue[appState.current_question];
+    appState.current_model = queue[appState.current_question-1];
     //onsole.log(appState.current_model);
     //console.log(queue[appState.current_question]);
     appState.current_view = "#question_view_mc";
-    console.log(queue[appState.current_question].question_text);
+    //console.log(queue[appState.current_question].question_text);
     update_view(appState);
     //console.log(appState)
     //console.log(queue[appState.current_question].question_text);
@@ -244,8 +244,8 @@ await fetch(`https://my-json-server.typicode.com/MildDandy/CUS_1172_Assignment_3
     appState.current_view = "#question_view_text";
     update_view(appState);
 */
-  console.log(appState.current_model.length);
-if (appState.current_question == 19) {
+  //console.log(appState.current_model.length);
+if (appState.current_question == 20) {
   pass_fail();
   appState.current_view  = "#ending_view";
   update_view(appState);
