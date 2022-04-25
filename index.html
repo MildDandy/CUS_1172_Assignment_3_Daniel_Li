@@ -53,14 +53,16 @@
 
       <!--<h4 class="card-title">{{first_name}}</h4> -->
       <div class="card-text">{{appState.current_model.question_text}}</div>
+      <span id="question-choices" class="clickable">
   <div class="row h-50 mt-3 text-center justify-content-md-center">
-    <div id="option_a" data-answer="a" class="text-light col-md-4 bg-danger p-2 border rounded" >{{appState.current_model.question_options.[0]}}</div>
+    <div id="option_a" data-answer="a" class="text-light col-md-4 bg-danger p-2 border rounded cursor-click" >{{appState.current_model.question_options.[0]}}</div>
     <div id="option_b" data-answer="b" class="text-light col-md-4 bg-success p-2 border rounded" >{{appState.current_model.question_options.[1]}}</div>
   </div>
   <div class="row h-50 text-center justify-content-md-center">
     <div id="option_c" data-answer="c" class="text-light col-md-4 bg-primary p-2 border rounded" >{{appState.current_model.question_options.[2]}}</div>
     <div id="option_d" data-answer="d" class="text-light col-md-4 bg-warning p-2 border rounded" >{{appState.current_model.question_options.[3]}}</div>
   </div>
+  </span>
       </div>
           <h1 class="m-2 text-success hide" id="type">✅{{appState.response}}</h6>
           <h2 class="m-2 text-warning hide" id="explanation"><div class="text-danger">❌WRONG</div> <u>Explanation</u>: {{appState.current_model.answer_explanation}}<br><button class="btn btn-primary hide" data-action="submit">Next Question</button></h2>
@@ -134,7 +136,7 @@
     <!-- Failing the Quiz will have a pink background-->
     <div class="card-body">
       <p> You got {{appState.current_score}} out of 10 questions right.</p>
-      <div> You passed the quiz! Good job. :D </div>
+      <div id="result"> You passed the quiz! Good job. :D </div>
       <div> You didn't pass the quiz. Try again? </div>
       <button class="btn btn-primary" data-action="menu">Return to Main Menu</button>
     </div>

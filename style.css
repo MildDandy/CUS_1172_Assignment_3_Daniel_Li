@@ -60,6 +60,15 @@ li span:hover {
 
 /*Handles the "CORRECT!" prompt when an question is answered properly*/
 
+.cursor-click{
+
+}
+
+/*Answer choices have a hand pointer cursor*/
+.clickable > div > div{
+  cursor:pointer;
+}
+
 #type{
   opacity: 1;
   transition: 1s;

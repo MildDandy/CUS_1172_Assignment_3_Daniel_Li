@@ -180,14 +180,16 @@ var render_view = (view_id, model_index) => {
 
 function display(){
   let text = document.getElementById("type");
+  let text6 = document.getElementById("question-choices");
   text.classList.remove("hide");
-
+  text6.classList.remove("clickable");
   setTimeout(function () {
     text.classList.add("fade-in");
     setTimeout(function () {
       text.classList.remove("fade-in");
       setTimeout(function () {
         text.classList.add("hide");
+        text6.classList.add("clickable");
         appState.current_question = appState.current_question + 1;
         setQuestionView(appState);
         answered = false;
@@ -199,6 +201,8 @@ function display(){
 function explain(){
   let text2 = document.getElementById("explanation");
   text2.classList.remove("hide");
+  let text7 = document.getElementById("question-choices");
+  text7.classList.remove("clickable");
 }
 
 //Quiz timer
