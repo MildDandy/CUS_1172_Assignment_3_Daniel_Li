@@ -3,6 +3,7 @@
 var answered = false;
 //Variable that tells what quiz was chosen
 var quiz_number = "";
+
 var queue = {};
 
 //Variable that is keeping ALL information on the current view.
@@ -11,7 +12,9 @@ var queue = {};
       current_question : -1,
       current_model : {},
       current_score : 0,
-      response : "CORRECT!!!"
+      response : "CORRECT!!!",
+      result : "huh",
+      name : ""
   }
 
 
@@ -29,7 +32,7 @@ var queue = {};
 
 
 function handle_app_widget_event(e){
-  console.log("Button was pressed.");
+  //console.log("Button was pressed.");
   //console.log(e.target);
   //console.log(e.target.id);
   //console.log(e.target.dataset.answer);
@@ -44,6 +47,8 @@ function handle_app_widget_event(e){
   */
   if(e.target.dataset.action == "button_quiz_2"){
     quiz_number = "quiz_2";
+    appState.name = document.querySelector("#first_name").value;
+    pass_fail();
     appState.current_view = "#ending_view"
     update_view(appState);
   }
@@ -52,6 +57,7 @@ function handle_app_widget_event(e){
     if (e.target.dataset.action == "button_quiz_1") {
         sec = 0;
         quiz_number = "quiz_1";
+        appState.name = document.querySelector("#first_name").value;
         appState.current_question = 0;
         setQuestionView(appState);
     }
@@ -197,17 +203,6 @@ function check_user_response(user_answer, model) {
   }
 }
 
-function updateQuestion(appState) {
-    if (appState.current_question < quiz_1.length-1) {
-      appState.current_question =   appState.current_question + 1;
-      appState.current_model = results[appState.current_question];
-    }
-    else {
-      appState.current_question = -2;
-      appState.current_model = {};
-    }
-}
-
 async function setQuestionView(appState) {
 
   console.log(appState.current_question);
@@ -251,15 +246,12 @@ await fetch(`https://my-json-server.typicode.com/MildDandy/CUS_1172_Assignment_3
 */
   console.log(appState.current_model.length);
 if (appState.current_question == 19) {
+  pass_fail();
   appState.current_view  = "#ending_view";
   update_view(appState);
   return;
 }
-
-
-
-  }
-
+}
 
 //Updating the View widget
 function update_view(appState){
@@ -268,11 +260,11 @@ function update_view(appState){
   document.querySelector("#view_widget").innerHTML = html;
 }
 
-function pass_fail(score, first_name){
-  if(score >= 8){
-      document.getElementById("demo").innerHTML = "Congratulations {{name}}! You pass the quiz!";
+function pass_fail(){
+  if(appState.current_score >= 8){
+      appState.result = "You passed the quiz! Good job ";
   }
   else{
-      document.getElementById("demo").innerHTML = "Sorry {{name}}, you fail the quiz.";
+      appState.result = "You didn't pass the quiz. Try again ";
   }
 }

@@ -115,29 +115,13 @@
     </div>
   </script>
 
-<script id="feedback_view" type="text/x-handlebars-template">
-  <div class="container">
-    <div class="card-body">
-      <h4 class="card-title" style="color:red;">{{name}}</h4>
-      <p class="card-text">{{expertise}}</p>
-      <h1> Explanation </h1>
-      <p>JavaScript is defined as a language that </p>
-      <button class="btn btn-primary">Submit</button>
-    </div>
-  </div>
-  </script>
-
-
 
 <script id="ending_view" type="text/x-handlebars-template">
   <div class="container">
     <!-- 80% or Higher means passing the Quiz-->
-    <!-- Passing the Quiz will have a green background-->
-    <!-- Failing the Quiz will have a pink background-->
     <div class="card-body">
-      <p> You got {{appState.current_score}} out of 10 questions right.</p>
-      <div id="result"> You passed the quiz! Good job. :D </div>
-      <div> You didn't pass the quiz. Try again? </div>
+      <h2> You got {{appState.current_score}} out of 10 questions right.</h2>
+      <h5 id="result" class="text-danger"> {{appState.result}}{{appState.name}}!</h5>
       <button class="btn btn-primary" data-action="menu">Return to Main Menu</button>
     </div>
   </div>
