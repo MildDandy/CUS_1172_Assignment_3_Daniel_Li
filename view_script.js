@@ -1,39 +1,4 @@
 //var quizData = JSON.parse(db);
-/*
-var quiz_1  = [
-    {
-      name: "Question 1",
-      question : "How are you doing?",
-      option_a : "Great",
-      option_b : "Alright",
-      option_c : "Okay",
-      option_d : "Meh",
-      correct_option : "Alright",
-      questionType : "mc"
-    },
-    {
-      name: "Question 2",
-      question : "Can you pull this off?",
-      option_a : "Maybe",
-      option_b : "Definitely",
-      option_c : "Nope",
-      option_d : "For sure!",
-      correct_option : "Maybe",
-      questionType : "mc"
-    },
-    {
-      name: "Question 3",
-      question : "JavaScript is _____.",
-      option_a : "a language",
-      option_b : "bearable",
-      option_c : "a mess",
-      option_d : "potential",
-      correct_option : "a language",
-      questionType : "mc"
-    }
-  ];
-*/
-
 
 var answered = false;
 //Variable that tells what quiz was chosen
@@ -69,8 +34,6 @@ function handle_app_widget_event(e){
   //console.log(e.target.id);
   //console.log(e.target.dataset.answer);
   //console.log(e.target.class);
-  //document.querySelector()
-  //alert(quizData.quiz_1);
 
 /*
   if(e.target.dataset.action == "button_quiz_1"){
@@ -152,8 +115,12 @@ function handle_app_widget_event(e){
     // Handle answer event for  text questions.
     if (appState.current_view == "#ending_view") {
         if (e.target.dataset.action == "menu") {
-          appState.current_view =  "#intro_view";
-          appState.current_model = {
+          appState = {
+              current_view : "#intro_view",
+              current_question : -1,
+              current_model : {},
+              current_score : 0,
+              response : "CORRECT!!!"
           }
           update_view(appState);
 
@@ -242,11 +209,7 @@ function updateQuestion(appState) {
 }
 
 async function setQuestionView(appState) {
-  if (appState.current_question == -2) {
-    appState.current_view  = "#ending_view";
-    update_view(appState);
-    return;
-  }
+
   console.log(appState.current_question);
 
 await fetch(`https://my-json-server.typicode.com/MildDandy/CUS_1172_Assignment_3_Daniel_Li/${quiz_number}`).then(
@@ -286,6 +249,15 @@ await fetch(`https://my-json-server.typicode.com/MildDandy/CUS_1172_Assignment_3
     appState.current_view = "#question_view_text";
     update_view(appState);
 */
+  console.log(appState.current_model.length);
+if (appState.current_question == 19) {
+  appState.current_view  = "#ending_view";
+  update_view(appState);
+  return;
+}
+
+
+
   }
 
 
