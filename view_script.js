@@ -13,7 +13,7 @@ var queue = {};
       current_model : {},
       current_score : 0,
       response : "CORRECT!!!",
-      result : "huh",
+      result : "",
       name : ""
   }
 
@@ -38,25 +38,17 @@ function handle_app_widget_event(e){
   //console.log(e.target.dataset.answer);
   //console.log(e.target.class);
 
-/*
-  if(e.target.dataset.action == "button_quiz_1"){
-    update_view("#question_view_mc");
-    console.log(db.json)
-    //var first_name = document.getElementById("first_name").value;
-  }
-  */
-  if(e.target.dataset.action == "button_quiz_2"){
-    quiz_number = "quiz_2";
-    appState.name = document.querySelector("#first_name").value;
-    pass_fail();
-    appState.current_view = "#ending_view"
-    update_view(appState);
-  }
-
   if (appState.current_view == "#intro_view"){
     if (e.target.dataset.action == "button_quiz_1") {
         sec = 0;
         quiz_number = "quiz_1";
+        appState.name = document.querySelector("#first_name").value;
+        appState.current_question = 1;
+        setQuestionView(appState);
+    }
+    if (e.target.dataset.action == "button_quiz_2") {
+        sec = 0;
+        quiz_number = "quiz_2";
         appState.name = document.querySelector("#first_name").value;
         appState.current_question = 1;
         setQuestionView(appState);
@@ -231,7 +223,7 @@ await fetch(`https://my-json-server.typicode.com/MildDandy/CUS_1172_Assignment_3
     //console.log(queue[appState.current_question].question_text);
     update_view(appState);
     //console.log(appState)
-    console.log(queue[appState.current_question-1].question_text);
+    //console.log(queue[appState.current_question-1].question_text);
     //console.log(appState.current_model);
   }
 /*
@@ -245,11 +237,10 @@ await fetch(`https://my-json-server.typicode.com/MildDandy/CUS_1172_Assignment_3
     update_view(appState);
 */
   //console.log(appState.current_model.length);
-if (appState.current_question == 10) {
+if (appState.current_question == 11) {
   pass_fail();
   appState.current_view  = "#ending_view";
   update_view(appState);
-  return;
 }
 }
 
